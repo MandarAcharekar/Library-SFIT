@@ -16,8 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
   private TextView mTextMessage;
-  Dialog loginDialog;
-
+  final int GET_LOGIN_DATA = 56;
 
   private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
           = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,8 +49,26 @@ public class MainActivity extends AppCompatActivity {
 
     //popup now
    // callLoginDialog();
-    startActivity(new Intent("com.example.library.librarysfit.LoginActivity"));
+    Intent getLoginIntent = new Intent("com.example.library.librarysfit.LoginActivity");
+    startActivityForResult(getLoginIntent, GET_LOGIN_DATA);
 
   }
+
+  public void onActivityResult(int requestCode, int resultCode, Intent data){
+    if(requestCode == GET_LOGIN_DATA){
+      if(resultCode == RESULT_OK){
+        Bundle bundle = data.getExtras();
+
+        String pid = bundle.getString(LoginActivity.keyPID);
+        String pwd = bundle.getString(LoginActivity.keyPassword);
+
+        Toast.makeText(this, "Welcome! " + pid,
+                Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Password: " + pwd,
+                Toast.LENGTH_SHORT).show();
+      }
+    }
+  }
+
 
 }

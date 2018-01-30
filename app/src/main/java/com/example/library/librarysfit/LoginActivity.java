@@ -1,5 +1,6 @@
 package com.example.library.librarysfit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -14,6 +15,9 @@ public class LoginActivity extends AppCompatActivity {
   Button btn_cancel;
   EditText et_pid;
   EditText et_pwd;
+
+  static String keyPID = "PID";
+  static String keyPassword = "Password";
 
 
   @Override
@@ -41,6 +45,21 @@ public class LoginActivity extends AppCompatActivity {
     btn_login.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        Intent sendLoginIntent = new Intent();
+
+        Bundle bundle_pid_pwd = new Bundle();
+
+        // Setting the login data inside the bundle
+        bundle_pid_pwd.putString(keyPID, et_pid.getText().toString());
+        bundle_pid_pwd.putString(keyPassword, et_pwd.getText().toString());
+
+        // Attaching the Bundle object to the Intent object
+        sendLoginIntent.putExtras(bundle_pid_pwd);
+
+        // Setting result as OK
+        setResult(RESULT_OK, sendLoginIntent);
+        // End current activity
+        finish();
 
       }
     });
