@@ -16,8 +16,8 @@ public class LoginActivity extends AppCompatActivity {
   EditText et_pid;
   EditText et_pwd;
 
-  static String keyPID = "PID";
-  static String keyPassword = "Password";
+  static String keyPID = "pid";
+  static String keyPassword = "password";
 
 
   @Override
