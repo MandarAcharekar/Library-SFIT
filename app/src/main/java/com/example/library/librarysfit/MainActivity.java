@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.library.librarysfit.MainScreenFragments.DashFragment;
+import com.example.library.librarysfit.MainScreenFragments.HomeFragment;
+import com.example.library.librarysfit.MainScreenFragments.NavFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     viewPager = findViewById(R.id.activity_main_view_pager);
-    viewPager.setAdapter(pagerAdapter);
+
+    // viewPager.setAdapter(pagerAdapter);
+    viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+
     viewPager.addOnPageChangeListener(pageChangeListener);
     viewPager.setPageTransformer(
             true,
@@ -139,14 +149,17 @@ public class MainActivity extends AppCompatActivity {
         case R.id.navigation_home:
           //mTextMessage.setText(R.string.title_home);
           viewPager.setCurrentItem(0);
+          //switchToFragmentHome();
           return true;
         case R.id.navigation_dashboard:
           //mTextMessage.setText(R.string.title_dashboard);
           viewPager.setCurrentItem(1);
+          //switchToFragmentDash();
           return true;
         case R.id.navigation_notifications:
           //mTextMessage.setText(R.string.title_notifications);
           viewPager.setCurrentItem(2);
+          //switchToFragmentNav();
           return true;
       }
       return false;
@@ -178,6 +191,27 @@ public class MainActivity extends AppCompatActivity {
     }
   };
 
+  private class MyPagerAdapter extends FragmentPagerAdapter{
+
+    public MyPagerAdapter(FragmentManager fm){
+      super(fm);
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+      switch(position){
+        case 0: return new HomeFragment();
+        case 1: return new DashFragment();
+        case 2: return new NavFragment();
+      }
+      return new HomeFragment();
+    }
+
+    @Override
+    public int getCount() {
+      return 3;
+    }
+  }
 
 
   public void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -208,6 +242,19 @@ public class MainActivity extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
       }
     }
+  }
+
+  public void switchToFragmentHome(){
+    FragmentManager manager = getSupportFragmentManager();
+    manager.beginTransaction().replace(R.id.page_home, new HomeFragment()).commit();
+  }
+  public void switchToFragmentDash(){
+    FragmentManager manager = getSupportFragmentManager();
+    manager.beginTransaction().replace(R.id.page_dash, new DashFragment()).commit();
+  }
+  public void switchToFragmentNav(){
+    FragmentManager manager = getSupportFragmentManager();
+    manager.beginTransaction().replace(R.id.page_nav, new NavFragment()).commit();
   }
 
 
