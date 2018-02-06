@@ -32,10 +32,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
   private TextView mTextMessage;
-  final int GET_LOGIN_DATA = 56;
+  public final int GET_LOGIN_DATA = 56;
   public static final String PREFS_NAME = "MyPrefsFile";
-  String pid;
-  String password;
+  public String pid = "Empty";
+  public String password = "Empty";
   List<View> viewList;
   ViewPager viewPager;
   private BottomNavigationView navigation;
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
     }
   }
 
-
+/*
   public void onActivityResult(int requestCode, int resultCode, Intent data){
     if(requestCode == GET_LOGIN_DATA){
       if(resultCode == RESULT_OK){
@@ -243,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
       }
     }
   }
-
+*/
   public void switchToFragmentHome(){
     FragmentManager manager = getSupportFragmentManager();
     manager.beginTransaction().replace(R.id.page_home, new HomeFragment()).commit();
