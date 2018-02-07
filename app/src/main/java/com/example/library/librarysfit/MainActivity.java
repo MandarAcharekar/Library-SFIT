@@ -31,7 +31,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-  private TextView mTextMessage;
   public final int GET_LOGIN_DATA = 56;
   public static final String PREFS_NAME = "MyPrefsFile";
   public String pid = "Empty";
@@ -46,14 +45,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    Window window = getWindow();
-    window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    // getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-    window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-    window.setStatusBarColor(Color.argb(33, 0, 0, 0));
-
     initBottomNavigation();
-
   }
 
   private void initBottomNavigation(){
