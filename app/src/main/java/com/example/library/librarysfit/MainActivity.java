@@ -109,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
             true,
             new BottomNavigationPageTransformer());
 
+    viewPager.setOffscreenPageLimit(3);
+
     navigation = findViewById(R.id.activity_main_bottom_navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
