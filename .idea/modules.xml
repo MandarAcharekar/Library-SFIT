@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Library-SFIT.iml" filepath="$PROJECT_DIR$/Library-SFIT.iml" />
+      <module fileurl="file://F:\PROJECT\AndroidProjects\Library Application\Sfit Library\Library-SFIT.iml" filepath="F:\PROJECT\AndroidProjects\Library Application\Sfit Library\Library-SFIT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sfit Library.iml" filepath="$PROJECT_DIR$/Sfit Library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
