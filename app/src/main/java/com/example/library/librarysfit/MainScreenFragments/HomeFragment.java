@@ -39,8 +39,6 @@ public class HomeFragment extends Fragment {
 
     View view = inflater.inflate(R.layout.page_home, container, false);
 
-    view.setBackgroundColor(Color.RED);
-
     mainActivity = (MainActivity) getActivity();
     tv_pid = view.findViewById(R.id.tv_pid);
     tv_pwd = view.findViewById(R.id.tv_pwd);
