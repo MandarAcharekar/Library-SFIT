@@ -46,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    //mTextMessage = (TextView) findViewById(R.id.message);
-    //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.activity_main_bottom_navigation);
-    //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     Window window = getWindow();
     window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     // getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -57,34 +53,6 @@ public class MainActivity extends AppCompatActivity {
     window.setStatusBarColor(Color.argb(33, 0, 0, 0));
 
     initBottomNavigation();
-
-    /*
-    // Restore preferences from the last time
-    SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-    pid = settings.getString(LoginActivity.keyPID, null);
-    password = settings.getString(LoginActivity.keyPassword, null);
-
-    if(pid == null || password == null){
-      Toast.makeText(this, "Login Details not found",
-              Toast.LENGTH_SHORT).show();
-
-      // Creating intent to get login details from user
-      Intent getLoginIntent = new Intent("com.example.library.librarysfit.LoginActivity");
-      startActivityForResult(getLoginIntent, GET_LOGIN_DATA);
-    }
-    else{
-      Toast.makeText(this, "Already Logged in!",
-              Toast.LENGTH_SHORT).show();
-    }
-
-    // Following block doesn't wait for the result of the LoginActivity
-    // If there isn't any data, then it will show null, and then
-    // Activity will get over.
-    TextView e1 = findViewById(R.id.tv_pid);
-    //e1.setText("PID: " + pid);
-    TextView e2 = findViewById(R.id.tv_pwd);
-    //e2.setText("Password: " + password);
-    */
 
   }
 
@@ -149,47 +117,16 @@ public class MainActivity extends AppCompatActivity {
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
       switch (item.getItemId()) {
         case R.id.navigation_home:
-          //mTextMessage.setText(R.string.title_home);
           viewPager.setCurrentItem(0);
-          //switchToFragmentHome();
           return true;
         case R.id.navigation_dashboard:
-          //mTextMessage.setText(R.string.title_dashboard);
           viewPager.setCurrentItem(1);
-          //switchToFragmentDash();
           return true;
         case R.id.navigation_notifications:
-          //mTextMessage.setText(R.string.title_notifications);
           viewPager.setCurrentItem(2);
-          //switchToFragmentNav();
           return true;
       }
       return false;
-    }
-  };
-
-
-
-  private PagerAdapter pagerAdapter = new PagerAdapter() {
-    @Override
-    public int getCount() {
-      return viewList.size();
-    }
-
-    @Override
-    public boolean isViewFromObject(View view, Object object) {
-      return view == object;
-    }
-
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-      container.removeView(viewList.get(position));
-    }
-
-    @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-      container.addView(viewList.get(position));
-      return viewList.get(position);
     }
   };
 
@@ -214,50 +151,5 @@ public class MainActivity extends AppCompatActivity {
       return 3;
     }
   }
-
-/*
-  public void onActivityResult(int requestCode, int resultCode, Intent data){
-    if(requestCode == GET_LOGIN_DATA){
-      if(resultCode == RESULT_OK){
-        // Get the Bundle with pid, password
-        Bundle bundle = data.getExtras();
-
-        // Retrieving values from the Bundle
-        pid = bundle.getString(LoginActivity.keyPID);
-        password = bundle.getString(LoginActivity.keyPassword);
-
-
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        SharedPreferences.Editor editor = settings.edit();
-
-        // Storing the PID, Passwords
-        editor.putString(LoginActivity.keyPID, pid);
-        editor.putString(LoginActivity.keyPassword, password);
-
-        // Commit the edits
-        editor.commit();
-
-
-        Toast.makeText(this, "Welcome! " + pid,
-                Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "Password: " + password,
-                Toast.LENGTH_SHORT).show();
-      }
-    }
-  }
-*/
-  public void switchToFragmentHome(){
-    FragmentManager manager = getSupportFragmentManager();
-    manager.beginTransaction().replace(R.id.page_home, new HomeFragment()).commit();
-  }
-  public void switchToFragmentDash(){
-    FragmentManager manager = getSupportFragmentManager();
-    manager.beginTransaction().replace(R.id.page_dash, new DashFragment()).commit();
-  }
-  public void switchToFragmentNav(){
-    FragmentManager manager = getSupportFragmentManager();
-    manager.beginTransaction().replace(R.id.page_nav, new NavFragment()).commit();
-  }
-
 
 }
