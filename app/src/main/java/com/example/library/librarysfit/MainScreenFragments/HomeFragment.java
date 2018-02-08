@@ -139,9 +139,8 @@ public class HomeFragment extends Fragment {
 
         // After getting login details
         // Recreate current fragment
-        //int containerId1 = ((ViewGroup)getView().getParent()).getId();
-        //android.app.Fragment f1 = new android.app.Fragment(this);
-        //mainActivity.getSupportFragmentManager().beginTransaction().replace(containerId1, this).commit();
+        mainActivity.viewPager.getAdapter().notifyDataSetChanged();
+
       }
     }
   }

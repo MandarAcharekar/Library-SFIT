@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
   public String pid = "Empty";
   public String password = "Empty";
   List<View> viewList;
-  ViewPager viewPager;
+  public ViewPager viewPager;
+  public FragmentPagerAdapter fragmentPagerAdapter;
   private BottomNavigationView navigation;
 
   @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -62,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
     viewPager = findViewById(R.id.activity_main_view_pager);
 
     // viewPager.setAdapter(pagerAdapter);
-    viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
+    fragmentPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
+    viewPager.setAdapter(fragmentPagerAdapter);
 
     viewPager.addOnPageChangeListener(pageChangeListener);
     viewPager.setPageTransformer(
@@ -126,6 +128,18 @@ public class MainActivity extends AppCompatActivity {
 
     public MyPagerAdapter(FragmentManager fm){
       super(fm);
+    }
+
+    @Override
+    public int getItemPosition(Object object){
+      if(object instanceof HomeFragment){
+        // Reload the HomeFragment Position when
+        // the notifyDataSetChanged() method is called.
+        // Refer:
+        // https://stackoverflow.com/questions/32027674/how-to-restart-the-fragment-in-viewpager/32027837#32027837
+        return POSITION_NONE;
+      }
+      return POSITION_UNCHANGED;
     }
 
     @Override
