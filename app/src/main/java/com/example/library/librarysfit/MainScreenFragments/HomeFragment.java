@@ -27,34 +27,65 @@ import static com.example.library.librarysfit.MainActivity.PREFS_NAME;
 
 public class HomeFragment extends Fragment {
 
+  MainActivity mainActivity = (MainActivity) getActivity();
+  boolean userLoggedIn=true;
+
+  // Login Screen Variables
   TextView tv_pid;
   TextView tv_pwd;
   Button homeLogin;
-  MainActivity mainActivity;
 
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState){
     // Inflate the layout for this fragment
+    View view;
+    // Check if the user is logged,
+    // Accordingly load the correct view
+    userLoggedIn = isUserLoggedIn();
+    if(userLoggedIn){
+      //TODO Switch to the new fragment
+      view = inflater.inflate(R.layout.issued_books, container, false);
+    }
+    else{
+      //do nothing and keep showing current fragment
+      view = inflater.inflate(R.layout.page_home, container, false);
 
-    View view = inflater.inflate(R.layout.page_home, container, false);
+      mainActivity = (MainActivity) getActivity();
+      tv_pid = view.findViewById(R.id.tv_pid);
+      tv_pwd = view.findViewById(R.id.tv_pwd);
+      homeLogin = view.findViewById(R.id.btn_login_home);
+      homeLogin.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+          Toast.makeText(getActivity(), "button Press",
+                  Toast.LENGTH_SHORT).show();
+          //startLoginProcess();
 
-    mainActivity = (MainActivity) getActivity();
-    tv_pid = view.findViewById(R.id.tv_pid);
-    tv_pwd = view.findViewById(R.id.tv_pwd);
-    homeLogin = view.findViewById(R.id.btn_login_home);
-    homeLogin.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        Toast.makeText(getActivity(), "button Press",
-                Toast.LENGTH_SHORT).show();
-        startLoginProcess();
-      }
-    });
+          // Creating intent to get login details from user
+          Intent getLoginIntent = new Intent("com.example.library.librarysfit.LoginActivity");
+          startActivityForResult(getLoginIntent, mainActivity.GET_LOGIN_DATA);
+        }
+      });
 
+    }
 
     return view;
   }
+
+  public boolean isUserLoggedIn(){
+    // Need to do it again here, because reasons.
+    mainActivity = (MainActivity)getActivity();
+    SharedPreferences settings = mainActivity.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+    mainActivity.pid = settings.getString(LoginActivity.keyPID, null);
+    mainActivity.password = settings.getString(LoginActivity.keyPassword, null);
+    if(mainActivity.pid == null || mainActivity.password == null) {
+      return false;
+    }
+    else
+      return true;
+  }
+
 
   public void startLoginProcess(){
     SharedPreferences settings = mainActivity.getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
@@ -105,6 +136,12 @@ public class HomeFragment extends Fragment {
                 Toast.LENGTH_SHORT).show();
         Toast.makeText(mainActivity, "Password: " + mainActivity.password,
                 Toast.LENGTH_SHORT).show();
+
+        // After getting login details
+        // Recreate current fragment
+        //int containerId1 = ((ViewGroup)getView().getParent()).getId();
+        //android.app.Fragment f1 = new android.app.Fragment(this);
+        //mainActivity.getSupportFragmentManager().beginTransaction().replace(containerId1, this).commit();
       }
     }
   }
