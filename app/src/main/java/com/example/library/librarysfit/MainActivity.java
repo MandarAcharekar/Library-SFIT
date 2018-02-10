@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -21,6 +22,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.library.librarysfit.MainScreenFragments.DashFragment;
 import com.example.library.librarysfit.MainScreenFragments.HomeFragment;
@@ -46,45 +48,12 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    //mTextMessage = (TextView) findViewById(R.id.message);
-    //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.activity_main_bottom_navigation);
-    //navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
     Window window = getWindow();
     window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-    // getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
     window.setStatusBarColor(Color.argb(33, 0, 0, 0));
 
     initBottomNavigation();
-
-    /*
-    // Restore preferences from the last time
-    SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-    pid = settings.getString(LoginActivity.keyPID, null);
-    password = settings.getString(LoginActivity.keyPassword, null);
-
-    if(pid == null || password == null){
-      Toast.makeText(this, "Login Details not found",
-              Toast.LENGTH_SHORT).show();
-
-      // Creating intent to get login details from user
-      Intent getLoginIntent = new Intent("com.example.library.librarysfit.LoginActivity");
-      startActivityForResult(getLoginIntent, GET_LOGIN_DATA);
-    }
-    else{
-      Toast.makeText(this, "Already Logged in!",
-              Toast.LENGTH_SHORT).show();
-    }
-
-    // Following block doesn't wait for the result of the LoginActivity
-    // If there isn't any data, then it will show null, and then
-    // Activity will get over.
-    TextView e1 = findViewById(R.id.tv_pid);
-    //e1.setText("PID: " + pid);
-    TextView e2 = findViewById(R.id.tv_pwd);
-    //e2.setText("Password: " + password);
-    */
 
   }
 
@@ -190,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
       return viewList.get(position);
     }
   };
+
 
   private class MyPagerAdapter extends FragmentPagerAdapter{
 
