@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    >
+
+    <TableRow>
+        <TextView
+            android:text="PID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <EditText
+            android:id="@+id/ed_PID"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="Password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <EditText
+            android:id="@+id/ed_pwd"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+
+            />
+    </TableRow>
+
+    <TableRow >
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Login"
+            />
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            />
+    </TableRow>
+
+
+</TableLayout>
