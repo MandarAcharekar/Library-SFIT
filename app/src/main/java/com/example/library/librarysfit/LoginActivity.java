@@ -1,5 +1,6 @@
 package com.example.library.librarysfit;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,7 +59,9 @@ public class LoginActivity extends AppCompatActivity {
 
         // Setting result as OK
         setResult(RESULT_OK, sendLoginIntent);
-        // End current activity
+
+
+        //End current activity
         finish();
 
       }
