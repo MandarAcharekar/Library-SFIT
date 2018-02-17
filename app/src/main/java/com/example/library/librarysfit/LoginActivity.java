@@ -16,8 +16,8 @@ public class LoginActivity extends AppCompatActivity {
   EditText et_pid;
   EditText et_pwd;
 
-  static String keyPID = "pid";
-  static String keyPassword = "password";
+  public static String keyPID = "pid";
+  public static String keyPassword = "password";
 
 
   @Override
@@ -45,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     btn_login.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+
         Intent sendLoginIntent = new Intent();
 
         Bundle bundle_pid_pwd = new Bundle();
@@ -73,5 +74,9 @@ public class LoginActivity extends AppCompatActivity {
       }
     });
 
+
   }
+
+
+
 }
