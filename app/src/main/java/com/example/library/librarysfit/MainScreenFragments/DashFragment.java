@@ -26,6 +26,7 @@ public class DashFragment extends Fragment {
     // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.page_dash, container, false);
 
+    /*
     bookList = new ArrayList<>();
 
     recyclerView = view.findViewById(R.id.recyclerView);
@@ -41,7 +42,7 @@ public class DashFragment extends Fragment {
 
     bookAdapter = new BookAdapter(getActivity(), bookList);
     recyclerView.setAdapter(bookAdapter);
-
+    */
 
     return view;
   }
