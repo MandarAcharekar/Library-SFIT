@@ -31,7 +31,9 @@ public class DashFragment extends Fragment {
     recyclerView = view.findViewById(R.id.recyclerView);
     recyclerView.setHasFixedSize(true);
 
-    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity() ));
+    //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity() ));
+    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+    recyclerView.setLayoutManager(linearLayoutManager);
 
     bookList.add(new Book("Book1", R.drawable.ic_notifications_black_24dp));
     bookList.add(new Book("Book2", R.drawable.ic_dashboard_black_24dp));
