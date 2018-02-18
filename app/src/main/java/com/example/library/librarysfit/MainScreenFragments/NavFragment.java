@@ -1,7 +1,6 @@
 package com.example.library.librarysfit.MainScreenFragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -43,13 +42,13 @@ public class NavFragment extends Fragment implements View.OnClickListener{
   public void onClick(View view) {
     switch (view.getId()){
       case R.id.btn_AboutLibrary:
-          getHtmlString("http://www.sfitengg.org/library_about.php");
+          startHtmlStringActivity("http://www.sfitengg.org/library_about.php");
         break;
     }
 
   }
 
-  private void getHtmlString(final String pageUrl){
+  private void startHtmlStringActivity(final String pageUrl){
     new Thread(new Runnable() {
       @Override
       public void run() {
@@ -57,7 +56,6 @@ public class NavFragment extends Fragment implements View.OnClickListener{
         StringBuilder builder = new StringBuilder();
 
         try {
-          //Document doc = Jsoup.connect("http://www.sfitengg.org/library_about.php").get();
           Document doc = Jsoup.connect(pageUrl).get();
           String title = doc.title();
           Elements links = doc.select("div.inner_the");
@@ -72,10 +70,8 @@ public class NavFragment extends Fragment implements View.OnClickListener{
         String s = new String(builder);
         s = s.replaceAll("src=\"", "src=\"http://www.sfitengg.org/");
 
-
-
         intent = new Intent(getContext(), Nav_Screen.class);
-        intent.putExtra(htmlStringKey, new String(s));
+        intent.putExtra(htmlStringKey, s);
         startActivity(intent);
       }// run end
     }//new runnable end
