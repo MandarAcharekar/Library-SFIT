@@ -37,18 +37,18 @@
             />
 
         <Button
-            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:text="Resources"
-            android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_book_label_maker"
-            android:paddingTop="7.5dp"
-            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_background"
             android:drawablePadding="-6dp"
-            />
+            android:drawableTop="@drawable/ic_book_label_maker"
+            android:elevation="0dp"
+            android:paddingTop="7.5dp"
+            android:text="Resources"
+            android:textSize="8.88dp" />
 
         <Button
             android:layout_weight="1"
