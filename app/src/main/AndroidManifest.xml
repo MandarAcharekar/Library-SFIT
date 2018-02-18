@@ -20,14 +20,14 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            >
+            android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
-                <action android:name="com.example.library.librarysfit.LoginActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
+                <action android:name="com.example.library.librarysfit.LoginActivity" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <activity android:name=".MainScreenFragments.Nav_Screen"></activity>
     </application>
 
 </manifest>

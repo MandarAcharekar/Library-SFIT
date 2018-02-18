@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/GridLayout"
+    android:rowCount="4"
+    android:columnCount="3"
+    >
+
+    <Button
+        android:id="@+id/btn_AboutLibrary"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:textSize="8.88dp"
+        android:text="About Library"
+        android:drawableTop="@drawable/ic_apple_on_book"
+        android:layout_column="0"
+        android:layout_row="0"
+        />
+
+    <Button
+        android:id="@+id/btn_Resources"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:textSize="8.88dp"
+        android:text="Resouces"
+        android:drawableTop="@drawable/ic_book_label_maker"
+        android:layout_column="1"
+        android:layout_row="0"
+        />
+
+    <Button
+        android:id="@+id/btn_News"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="News"
+        android:textSize="8.88dp"
+        android:drawableTop="@drawable/ic_stack_of_books"
+        android:layout_column="2"
+        android:layout_row="3"
+        />
+
+</GridLayout>
