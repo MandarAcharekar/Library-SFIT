@@ -25,6 +25,7 @@ public class NavFragment extends Fragment implements View.OnClickListener{
 
   Intent intent;
   Button btn_AboutLibrary;
+  Button btn_Resources;
   public static final String htmlStringKey = "htmlKey";
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +36,9 @@ public class NavFragment extends Fragment implements View.OnClickListener{
     btn_AboutLibrary = view.findViewById(R.id.btn_AboutLibrary);
     btn_AboutLibrary.setOnClickListener(this);
 
+    btn_Resources = view.findViewById(R.id.btn_Resources);
+    btn_Resources.setOnClickListener(this);
+
     return view;
   }
 
@@ -42,7 +46,10 @@ public class NavFragment extends Fragment implements View.OnClickListener{
   public void onClick(View view) {
     switch (view.getId()){
       case R.id.btn_AboutLibrary:
-          startHtmlStringActivity("http://www.sfitengg.org/library_about.php");
+        startHtmlStringActivity("http://www.sfitengg.org/library_about.php");
+        break;
+      case R.id.btn_Resources:
+        startHtmlStringActivity("http://www.sfitengg.org/library_resources.php");
         break;
     }
 
