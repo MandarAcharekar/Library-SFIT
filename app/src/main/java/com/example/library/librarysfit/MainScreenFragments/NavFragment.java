@@ -43,14 +43,22 @@ public class NavFragment extends Fragment implements View.OnClickListener{
   public void onClick(View view) {
     switch (view.getId()){
       case R.id.btn_AboutLibrary:
-        new Thread(new Runnable() {
-          @Override
-          public void run() {
+          getHtmlString("http://www.sfitengg.org/library_about.php");
+        break;
+    }
 
-            StringBuilder builder = new StringBuilder();
+  }
+
+  private void getHtmlString(final String pageUrl){
+    new Thread(new Runnable() {
+      @Override
+      public void run() {
+
+        StringBuilder builder = new StringBuilder();
 
         try {
-          Document doc = Jsoup.connect("http://www.sfitengg.org/library_about.php").get();
+          //Document doc = Jsoup.connect("http://www.sfitengg.org/library_about.php").get();
+          Document doc = Jsoup.connect(pageUrl).get();
           String title = doc.title();
           Elements links = doc.select("div.inner_the");
 
@@ -61,13 +69,19 @@ public class NavFragment extends Fragment implements View.OnClickListener{
           builder.append("Error : ").append(e.getMessage()).append("\n");
         }
 
+        String s = new String(builder);
+        s = s.replaceAll("src=\"", "src=\"http://www.sfitengg.org/");
+
+
+
         intent = new Intent(getContext(), Nav_Screen.class);
-        intent.putExtra(htmlStringKey, new String(builder));
+        intent.putExtra(htmlStringKey, new String(s));
         startActivity(intent);
-          }
-        }).start();
-        break;
-    }
+      }// run end
+    }//new runnable end
+    ).start();//new thread end
+
 
   }
+
 }
