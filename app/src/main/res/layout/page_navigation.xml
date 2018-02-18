@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,7 +7,11 @@
     android:layout_height="match_parent"
     android:background="@color/lightMildGreen"
     android:id="@+id/page_dash"
-    android:orientation="vertical">
+
+
+
+    android:orientation="vertical"
+    >
 
 
     <TextView
@@ -34,39 +37,42 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="About Library"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_apple_on_book"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="Resources"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_book_label_maker"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="Digital Library"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_book_of_astronomy"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="-6dp"
@@ -83,39 +89,42 @@
 
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="Virtual References"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_book_open_backwards"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="35dp"
             android:drawablePadding="-1dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="WebOpac"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_book_return_box"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="services"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_book_search"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
@@ -132,39 +141,42 @@
 
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="PR help"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_bookmark_with_star"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="Gallery"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_books_on_bookshelf"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="quick links"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_sketchbook_with_pencil_writing"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
@@ -181,39 +193,42 @@
 
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="question papers"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_sketchbook_with_pencil"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="notices"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_sport_magazine"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
             />
 
         <Button
+            android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:text="news"
             android:textSize="8.88dp"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"
+            android:drawableTop="@drawable/ic_stack_of_books"
             android:paddingTop="7.5dp"
-            android:background="@drawable/ic_dashboard_black_24dp"
+            android:background="@drawable/button_background"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="-6dp"
