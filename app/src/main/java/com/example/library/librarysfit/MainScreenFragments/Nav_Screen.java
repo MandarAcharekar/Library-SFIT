@@ -21,6 +21,8 @@ public class Nav_Screen extends AppCompatActivity {
     webView = findViewById(R.id.webView);
     WebSettings settings = webView.getSettings();//.setJavaScriptEnabled(true);
 
+    //getSupportActionBar().setTitle("TEst 1");
+
     /*
     // Use WideViewport and Zoom out if there is no viewport defined
     settings.setUseWideViewPort(true);
