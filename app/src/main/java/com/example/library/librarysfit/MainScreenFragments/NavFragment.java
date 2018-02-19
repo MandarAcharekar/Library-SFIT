@@ -42,7 +42,7 @@ public class NavFragment extends Fragment implements View.OnClickListener{
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
                            Bundle savedInstanceState){
     // Inflate the layout for this fragment
-    View view = inflater.inflate(R.layout.page_navigation_temp, container, false);
+    View view = inflater.inflate(R.layout.page_navigation, container, false);
 
     btn_AboutLibrary = view.findViewById(R.id.btn_AboutLibrary);
     btn_AboutLibrary.setOnClickListener(this);
@@ -91,6 +91,10 @@ public class NavFragment extends Fragment implements View.OnClickListener{
         break;
       case R.id.btn_Resources:
         startHtmlStringActivity("http://www.sfitengg.org/library_resources.php");
+        break;
+      case R.id.btn_News:
+        //TODO Add proper xPath to input this google docs url
+        startHtmlStringActivity("https://docs.google.com/spreadsheets/d/1BS5vn2prA8YBg7oZDO-dFhO1ikdtre9HEGDOSRyXXh8/edit?usp=sharing");
         break;
     }
 

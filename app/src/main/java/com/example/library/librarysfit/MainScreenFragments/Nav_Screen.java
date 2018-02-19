@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.example.library.librarysfit.R;
 
@@ -38,6 +39,17 @@ public class Nav_Screen extends AppCompatActivity {
       settings.setDisplayZoomControls(false);
     }
 
+    /* //TODO Maybe need this for the google Docs link
+    // By default, redirects cause jump from WebView to default
+    // system browser. Overriding url loading allows the WebView
+    // to load the redirect into this screen.
+    webView.setWebViewClient(new WebViewClient() {
+      public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        view.loadUrl(url);
+        return false;
+      }
+    });
+    */
     webView.loadDataWithBaseURL(null, htmlContent, "text/html", "utf-8", null);
   }
 }
