@@ -100,6 +100,7 @@ public class NavFragment extends Fragment implements View.OnClickListener{
         break;
       case R.id.btn_VirtualReferences:
         startHtmlStringActivity("http://www.sfitengg.org/library_virt_ref.php");
+        //Clicking on a link, opens browser as it should.
         break;
       case R.id.btn_Webopac:
         //TODO Go to the HomeFragment instead
