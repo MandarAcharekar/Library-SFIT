@@ -26,6 +26,17 @@ public class NavFragment extends Fragment implements View.OnClickListener{
   Intent intent;
   Button btn_AboutLibrary;
   Button btn_Resources;
+  Button btn_DigitalLibrary;
+  Button btn_VirtualRefs;
+  Button btn_Webopac;
+  Button btn_Services;
+  Button btn_prHelp;
+  Button btn_Gallery;
+  Button btn_QuickLinks;
+  Button btn_QuestionPapers;
+  Button btn_Notices;
+  Button btn_News;
+
   public static final String htmlStringKey = "htmlKey";
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +49,36 @@ public class NavFragment extends Fragment implements View.OnClickListener{
 
     btn_Resources = view.findViewById(R.id.btn_Resources);
     btn_Resources.setOnClickListener(this);
+
+    btn_DigitalLibrary = view.findViewById(R.id.btn_DigitalLibrary);
+    btn_DigitalLibrary.setOnClickListener(this);
+
+    btn_VirtualRefs = view.findViewById(R.id.btn_VirtualReferences);
+    btn_VirtualRefs.setOnClickListener(this);
+
+    btn_Webopac = view.findViewById(R.id.btn_Webopac);
+    btn_Webopac.setOnClickListener(this);
+
+    btn_Services = view.findViewById(R.id.btn_Services);
+    btn_Services.setOnClickListener(this);
+
+    btn_prHelp = view.findViewById(R.id.btn_PrHelp);
+    btn_prHelp.setOnClickListener(this);
+
+    btn_Gallery = view.findViewById(R.id.btn_Gallery);
+    btn_Gallery.setOnClickListener(this);
+
+    btn_QuickLinks = view.findViewById(R.id.btn_QuickLinks);
+    btn_QuickLinks.setOnClickListener(this);
+
+    btn_QuestionPapers = view.findViewById(R.id.btn_QuestionPapers);
+    btn_QuestionPapers.setOnClickListener(this);
+
+    btn_Notices = view.findViewById(R.id.btn_Notices);
+    btn_Notices.setOnClickListener(this);
+
+    btn_News = view.findViewById(R.id.btn_News);
+    btn_News.setOnClickListener(this);
 
     return view;
   }
