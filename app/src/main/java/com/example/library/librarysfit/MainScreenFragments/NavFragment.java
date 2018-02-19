@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.library.librarysfit.R;
 
@@ -85,12 +86,50 @@ public class NavFragment extends Fragment implements View.OnClickListener{
 
   @Override
   public void onClick(View view) {
+    //TODO Implement loading screen
+
     switch (view.getId()){
       case R.id.btn_AboutLibrary:
         startHtmlStringActivity("http://www.sfitengg.org/library_about.php");
         break;
       case R.id.btn_Resources:
         startHtmlStringActivity("http://www.sfitengg.org/library_resources.php");
+        break;
+      case R.id.btn_DigitalLibrary:
+        startHtmlStringActivity("http://www.sfitengg.org/library_digital.php");
+        break;
+      case R.id.btn_VirtualReferences:
+        startHtmlStringActivity("http://www.sfitengg.org/library_virt_ref.php");
+        break;
+      case R.id.btn_Webopac:
+        //TODO Go to the HomeFragment instead
+        // Linking to outside Webopac url
+        startHtmlStringActivity("http://115.248.171.105:82/webopac/");
+        break;
+      case R.id.btn_Services:
+        startHtmlStringActivity("http://www.sfitengg.org/library_services.php");
+        break;
+      case R.id.btn_PrHelp:
+        //TODO Display the sub list in the webview, by using different query, ie add param for query too
+        // Linking to Call For Papers, as the main heading doesnt have a html page
+        startHtmlStringActivity("http://www.sfitengg.org/library_call_for_papers.php");
+        break;
+      case R.id.btn_Gallery:
+        startHtmlStringActivity("http://www.sfitengg.org/library_events.php");
+        break;
+      case R.id.btn_QuickLinks:
+        //TODO Display the sub list in the webview, by using different query, ie add param for query too
+        // Linking to Timings, as the main heading doesnt have a html page
+        startHtmlStringActivity("http://www.sfitengg.org/library_Timings.php");
+        break;
+      case R.id.btn_QuestionPapers:
+        //TODO Add proper xPath to input this google docs url
+        startHtmlStringActivity("https://drive.google.com/drive/folders/0B5op2gd8uj9GU0JrX0JvbExhOUU?usp=sharing");
+        break;
+      case R.id.btn_Notices:
+        //TODO Display the sub list in the webview, by using different query, ie add param for query too
+        //TODO Maybe manage only .pdf files in the view
+        Toast.makeText(getContext(), "NOt IMPLEMENTED YET", Toast.LENGTH_SHORT).show();
         break;
       case R.id.btn_News:
         //TODO Add proper xPath to input this google docs url
