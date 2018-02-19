@@ -23,6 +23,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_AboutLibrary"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -37,6 +38,7 @@
             />
 
         <Button
+            android:id="@+id/btn_Resources"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginLeft="50dp"
@@ -51,6 +53,7 @@
             android:textSize="8.88dp" />
 
         <Button
+            android:id="@+id/btn_DigitalLibrary"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -75,6 +78,7 @@
 
 
         <Button
+            android:id="@+id/btn_VirtualReferences"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -89,6 +93,7 @@
             />
 
         <Button
+            android:id="@+id/btn_Webopac"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -103,6 +108,7 @@
             />
 
         <Button
+            android:id="@+id/btn_Services"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -124,6 +130,7 @@
 
 
         <Button
+            android:id="@+id/btn_PrHelp"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -138,6 +145,7 @@
             />
 
         <Button
+            android:id="@+id/btn_Gallery"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -152,6 +160,7 @@
             />
 
         <Button
+            android:id="@+id/btn_QuickLinks"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -176,6 +185,7 @@
 
 
         <Button
+            android:id="@+id/btn_QuestionPapers"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -190,6 +200,7 @@
             />
 
         <Button
+            android:id="@+id/btn_Notices"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -204,6 +215,7 @@
             />
 
         <Button
+            android:id="@+id/btn_News"
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="80dp"
